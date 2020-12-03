@@ -11,4 +11,7 @@ def home():
 
 @app.route("/data")
 def data():
-    
+    placeholder
+
+if __name__ == "__main__":
+    app.run(debug=True)
