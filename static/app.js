@@ -5,7 +5,7 @@ let info = d3.select("#sample-metadata")
 
 
 function init_build() {
-    d3.json("https://d3-viz-challenge-reynolds.herokuapp.com/data").then(
+    d3.json("https://d3-visualizations-dvance.herokuapp.com/").then(
         data => {
             populate_charts(data, subjectID)
             let choose_subject = d3.select("#selDataset")
@@ -122,12 +122,12 @@ init_build()
 
 d3.select("#selDataset")
     .on("change", function() {
-        let option_chosen = d3.select(this).property("value")
-        console.log(option_chosen)
+        let choice = d3.select(this).property("value")
+        console.log(choice)
         clear_all()
-        d3.json("https://d3-viz-challenge-reynolds.herokuapp.com/data").then(
+        d3.json("https://d3-visualizations-dvance.herokuapp.com/").then(
         data => {
-            populate_charts(data, option_chosen)
+            populate_charts(data, choice)
         })
     })
 
