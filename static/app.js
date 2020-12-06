@@ -5,7 +5,7 @@ let info = d3.select("#sample-metadata")
 
 
 function init_build() {
-    d3.json("https://d3-visualizations-dvance.herokuapp.com/").then(
+    d3.json("samples.json").then(
         data => {
             populate_charts(data, subjectID)
             let choose_subject = d3.select("#selDataset")
@@ -125,7 +125,7 @@ d3.select("#selDataset")
         let choice = d3.select(this).property("value")
         console.log(choice)
         clear_all()
-        d3.json("https://d3-visualizations-dvance.herokuapp.com/").then(
+        d3.json("samples.json").then(
         data => {
             populate_charts(data, choice)
         })
